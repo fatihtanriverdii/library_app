@@ -1,0 +1,196 @@
+/***** RESET *****/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+/***** RESET *****/
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    src: url(fonts/open_sans_condensed-webfont.eot);
+    src: local('Open Sans Condensed'),
+        url('fonts/open_sans_condensed-webfont.woff') format('woff'),
+        url('fonts/open_sans_condensed-webfont.ttf') format('truetype'),
+        url('fonts/open_sans_condensed-webfont.svg#Open Sans Condensed') format('svg')
+}
+
+
+.sepet {
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 30px;
+    padding: 0 8px 0 8px;
+    text-decoration: none;
+    margin: 0 0 0 40%;
+}
+
+.bookBackground {
+    height: 85%;
+    width: 100%;
+    background: url("/Images/about/aaa.jpg");
+    background-size: cover;
+}
+
+.book {
+    margin: 0 0 0 40%;
+    padding-top: 5%;
+}
+
+.kitabdugme {
+    display: block;
+    width: 30%;
+    margin-left: 43%;
+    margin-top: 2%;
+}
+
+#offcanvasBottom {
+    height: 60%;
+}
+
+.yazi4 {
+    font: 100% tahoma;
+    color: #d36818;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
+    .kitabdugme {
+        display: block;
+        width: 50%;
+        margin: 5% 0 0 30%;
+    }
+
+    .book img {
+        width: 60%;
+    }
+
+    .book {
+        padding-top: 20%;
+        margin-left: 30%;
+    }
+}
+
+.yazi5 {
+    font: 24px tahoma;
+    text-decoration-style: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 30px 0 0 10pxx;
+}
+
+.yazi6 {
+    font: 19px bold tahoma;
+    text-align: center;
+    text-indent: 15px;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+    letter-spacing: 1px;
+}

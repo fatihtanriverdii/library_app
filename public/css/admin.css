@@ -1,0 +1,296 @@
+/***** RESET *****/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+/***** RESET *****/
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    src: url(fonts/open_sans_condensed-webfont.eot);
+    src: local('Open Sans Condensed'),
+        url('fonts/open_sans_condensed-webfont.woff') format('woff'),
+        url('fonts/open_sans_condensed-webfont.ttf') format('truetype'),
+        url('fonts/open_sans_condensed-webfont.svg#Open Sans Condensed') format('svg')
+}
+
+header {
+    display: flex;
+    height: 50px;
+    padding-left: 1%;
+    padding-right: 1%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav li a {
+    display: block;
+    width: 100px;
+    height: 20px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+}
+
+nav li#selection a {
+    background-color: black;
+    color: white;
+}
+
+nav li a:hover {
+    background-color: black;
+    color: white;
+}
+
+.logout {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    padding: 5px 10px;
+}
+
+.logout:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2%;
+    height: 40vh;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+p {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+.containerd {
+    display: flex;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+}
+
+.duyuru-form {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.duyuru-form h2 {
+    margin-bottom: 10px;
+}
+
+.duyuru-form textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.duyuru-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.duyurular {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.duyurular h2 {
+    margin-bottom: 10px;
+}
+
+.duyurular ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.duyurular li {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.duyurular li:first-child {
+    margin-top: 20px;
+}
+
+.duyurular li .duyuru-metin {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.duyurular li button {
+    padding: 5px 10px;
+    float: right;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+footer {
+    left: 0;
+    bottom: 0;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+}

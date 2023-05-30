@@ -1,0 +1,275 @@
+/***** RESET *****/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, 
+label, legend, table, caption, tbody, tfoot, thead, tr{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+html, body{height: 100%;}
+body{line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q{quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+table{border-collapse: collapse; border-spacing: 0;}
+textarea{overflow: auto;}
+
+/***** RESET *****/
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    src: url(fonts/open_sans_condensed-webfont.eot);
+    src: local('Open Sans Condensed'),
+         url('fonts/open_sans_condensed-webfont.woff') format('woff'),
+         url('fonts/open_sans_condensed-webfont.ttf') format('truetype'),
+         url('fonts/open_sans_condensed-webfont.svg#Open Sans Condensed') format('svg')
+} 
+
+header{
+  height: 4%;
+  background-color: hsl(0, 0%, 93%);
+  padding: 1%;
+}
+
+.logo{
+  float: left;
+  font: 80% bold tahoma;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0; /*Genişliği javascriptle değiştir*/
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: hsl(0, 0%, 93%);
+  overflow-x: hidden; /*Yatay kaydırmayı devre dışı bırak */
+  transition: 0.5s;/* Sidenav'da kaymaya 0,5 saniye geçiş efekti */
+  padding-top: 60px; /*İçeriği üstten 60 piksel yerleştirin */
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+/*Menüler üzerine gelince  renklerini değiştirin */
+
+.sidenav a:hover {
+  color: black; 
+}
+/*Kapat düğmesini konumlandırın ve stillendirin (sağ üst köşe) */
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+/* Yüksekliğin 450 pikselden az olduğu daha küçük ekranlarda, 
+sidenav stilini değiştirin 
+(daha az dolgu ve daha küçük bir yazı tipi boyutu) */
+
+
+.sub-menu {
+  display: none;
+  padding-left: 40px;
+}
+
+.sub-menu a {
+  font-size: 20px;
+}
+
+/* Alt menü gösterildiğinde */
+.sub-menu.show {
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  article {height:  500px};
+}
+
+
+
+
+  article{
+    background: url("/Images/mid3.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 200px; 
+    text-align: center;
+    padding: 15% 0;
+    font: 16px bold tahoma;color: white;
+    width: 100%;
+    animation:image 15s infinite alternate;
+	-webkit-animation:image 15s infinite alternate;
+	-moz-animation:image 15s infinite alternate;
+  }
+  @keyframes image{
+    0%{
+      background: url("/Images/mid3.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+  
+    25%{
+      background: url("/Images/mid2.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+  
+    50%{
+      background: url("/Images/mid4.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+  
+    75%{
+      background: url("/Images/mid1.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+  
+    100%{
+      background: url("/Images/mid5.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+  }
+
+.yazi1{
+    font: 250% bold tahoma;color: white;
+}
+.searchbox{
+    display: flex;
+    justify-content: center;
+        align-items: center;
+        background-color: #d4cece;
+        width: 70%; height: 15%;
+        border-radius: 40px;
+        padding: 5px;
+        margin:auto;
+}
+.tbox{
+    float: left;
+    background: none;
+    border: none;
+    outline: none;
+    color: rgb(22, 21, 21);
+    width: 100%;
+    font: 16px tahoma;
+    padding: 0 7px;
+
+}
+.buttonsearch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 19px;
+    float: right;
+    padding: 0 8px 0 8px;
+    text-decoration: none;
+}
+footer{
+  margin-top: 1%;
+    height: 11%;
+    background-color:hsl(0, 0%, 93%)
+    
+}
+footer ul li{
+float: left;
+
+}
+footer ul li a{
+    display: block; 
+    padding: 3px 10px;
+    font: 80% tahoma;
+    color: dimgrey;
+    text-decoration: none;
+}
+footer ul li a:hover{
+    text-decoration: underline; color: rgb(250, 109, 8);
+}
+
+.container {
+  height: auto;
+  margin: 0 auto;
+  padding-top: 3%;
+  padding-left: 1%;
+  padding-right: 1%;
+  background-color: white;
+  overflow-x: auto;
+  
+}
+
+.scrollable-wrapper {
+  padding-top: 2%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content:center;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 250px;
+}
+
+.box {
+  height: auto;
+  width: auto;
+  transition: 0.5s;
+  margin: 0 2%;
+}
+
+.box a {
+  text-decoration: none;
+}
+
+.box:hover {
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+
+.yazi2{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2%;
+  font: 150% tahoma ;
+  text-decoration-style: bold;
+  color: rgb(0, 0, 0);
+  text-align: center;
+
+}
+.yazi3{
+    font: 120% bold tahoma;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+.yazi4
+{
+    font: 100% tahoma;
+    color:#d36818 ; 
+}
+.yazi5{
+  font: 24px tahoma ;
+text-decoration-style: bold;
+color: rgb(0, 0, 0);
+text-align: center;
+margin: 30px 0 0 10pxx;
+
+}
+.yazi6{
+  font: 19px bold tahoma;
+  text-align: center;
+  text-indent: 15px;
+  color: rgb(0, 0, 0);
+  text-align: justify;
+  letter-spacing: 1px;
+}
+

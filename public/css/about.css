@@ -1,0 +1,269 @@
+/***** RESET *****/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, 
+label, legend, table, caption, tbody, tfoot, thead, tr{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+html, body{height: 100%;}
+body{line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q{quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+table{border-collapse: collapse; border-spacing: 0;}
+textarea{overflow: auto;}
+
+/***** RESET *****/
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    src: url(fonts/open_sans_condensed-webfont.eot);
+    src: local('Open Sans Condensed'),
+         url('fonts/open_sans_condensed-webfont.woff') format('woff'),
+         url('fonts/open_sans_condensed-webfont.ttf') format('truetype'),
+         url('fonts/open_sans_condensed-webfont.svg#Open Sans Condensed') format('svg')
+} 
+
+header{
+    height: 3%;
+    background-color: hsl(0, 0%, 93%);
+    padding: 1%;
+  }
+  
+  .logo{
+    float: left;
+    font: 100% bold tahoma;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0; /*Genişliği javascriptle değiştir*/
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: hsl(0, 0%, 93%);
+    overflow-x: hidden; /*Yatay kaydırmayı devre dışı bırak */
+    transition: 0.5s;/* Sidenav'da kaymaya 0,5 saniye geçiş efekti */
+    padding-top: 60px; /*İçeriği üstten 60 piksel yerleştirin */
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  /*Menüler üzerine gelince  renklerini değiştirin */
+  
+  .sidenav a:hover {
+    color: black; 
+  }
+  /*Kapat düğmesini konumlandırın ve stillendirin (sağ üst köşe) */
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  /* Yüksekliğin 450 pikselden az olduğu daha küçük ekranlarda, 
+  sidenav stilini değiştirin 
+  (daha az dolgu ve daha küçük bir yazı tipi boyutu) */
+  
+  
+  .sub-menu {
+    display: none;
+    padding-left: 40px;
+  }
+  
+  .sub-menu a {
+    font-size: 20px;
+  }
+  
+  /* Alt menü gösterildiğinde */
+  .sub-menu.show {
+    display: block;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  body{
+    background:rgb(255, 244, 244);
+}
+.profile-card{
+            position:relative;
+            overflow: hidden;
+            margin-bottom:10px;
+            box-shadow:0px 2px 3px #222;
+            margin-top: 50px;
+            
+        }
+        .profile-card .profile-content{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            padding:50% 4%;
+            text-align: center;
+           
+        }
+        .profile-card:hover .profile-img img
+        {
+            transform: scale(1.2);
+        }
+        .profile-card .profile-img img{
+            width:100%;
+            height:auto;
+            transition: transform 1s;
+        }
+        .profile-card .profile-content::before{
+            content: "";
+            position:absolute;
+            top:0;
+            left:0;
+            width:50%;
+            height:40%;
+            border:3px solid #333;
+            border-right:3px solid transparent;
+            border-bottom:3px solid transparent;
+            transform: scale(1,1);
+            transition: all 0.50s linear;
+        }
+        .profile-card .profile-content::after{
+            content: "";
+            position:absolute;
+            bottom:0;
+            right:0;
+            width:50%;
+            height:40%;
+            border:3px solid #222;
+            border-left:3px solid transparent;
+            border-top:3px solid transparent;
+            transition: all 0.50s linear;
+            
+        }
+        .profile-card:hover .profile-content:before{
+            top:20px;
+            left:20px;
+        }
+        .profile-card:hover .profile-content:after{
+            bottom:20px;
+            right:20px;
+        }
+       
+        .profile-card .profile-content:hover{
+            background-color: rgba(255, 43, 131, 0.5);
+        }
+        .profile-card .profile-content .title{
+            font-size:24px;
+            color:#ffffff;
+            opacity:0;
+            letter-spacing:2px;
+            text-transform:uppercase;
+            transform: translateY(-100px);
+            transition:all 900ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.20s;
+        }
+        .profile-card:hover .title{
+            opacity:1;
+            transform: translateY(0);
+        }
+        .profile-card:hover .title::after{
+            content:"";
+            display:block;
+            width:50%;
+            margin:10px auto;
+            border-bottom:2px solid #222;
+        }
+        .profile-card .profile-content .title > span{
+            display:block;
+            margin:5px 0;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+        .profile-card .profile-content .social-link{
+            margin:20px 0;
+            padding:0;
+            opacity:0;
+            transform: translateY(100px);
+            transition:all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.20s;
+        }
+        .profile-card:hover .social-link{
+            opacity:1;
+            transform: translateY(0);
+        }
+        .profile-card .profile-content .social-link li{
+            display: inline-block;
+            list-style: none;
+            margin:0 4px;
+        }
+        .profile-card .profile-content .social-link li a{
+            color:#333;
+            width:30px;
+            height:25px;
+            line-height:24px;
+            text-align: center;
+            border-radius:5px;
+            background-color: #fff;
+        }
+        
+        footer{
+            height: 100px;
+            background-color:hsl(0, 0%, 93%)
+        }
+        footer ul li{
+        float: left;
+        
+        }
+        footer ul li a{
+            display: block; 
+            padding: 3px 10px;
+            font: 13px tahoma;
+            color: dimgrey;
+            text-decoration: none;
+        }
+        footer ul li a:hover{
+            text-decoration: underline; color: rgb(250, 109, 8);
+        }
+        
+        .yazi4
+        {
+            font: 15px tahoma;
+            color:#d36818 ; 
+        }
+        .about{
+            width: 100%;
+            height: 100%;
+            background: url(Images/about/Contri.png)no-repeat;
+            background-size: cover;
+        } 
+        
+        .lead{
+           padding-top: 90px ;
+        }
+        .text-center {
+            text-align: center;
+          }
+        
+          .blockquote {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+          }
+        
+          .blockquote-footer {
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875em;
+            color: #6c757d;
+          }
