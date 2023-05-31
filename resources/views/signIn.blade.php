@@ -1,5 +1,5 @@
 <?php
-include 'C:/xampp/htdocs/library_app_laravel/config/baglanti.php';
+$config = config('baglanti');
 
 
 $email_err = "";
@@ -74,7 +74,8 @@ if (isset($_POST["giris"])) {
 
     <div class="girisyap">
         <div class="girisform">
-            <form action="signin.php" method="POST">
+            <form action="{{ route('signInC') }}" method="POST">
+                {!! csrf_field() !!}
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" <?php

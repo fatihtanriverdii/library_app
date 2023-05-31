@@ -1,5 +1,5 @@
 <?php
-include 'C:/xampp/htdocs/library_app_laravel/config/baglanti.php';
+$config = config('baglanti');
 
 
 $username_err = "";
@@ -90,7 +90,8 @@ if (isset($_POST["Register"])) {
                             <div class="card-body p-3">
                                 <h2 class="text-uppercase text-center mb-3">Create an account</h2>
 
-                                <form action="registration.php" method="POST">
+                                <form action="{{ route('register') }}" method="POST">
+                                    {!! csrf_field() !!}
 
                                     <div class="form-outline mb-4">
                                         <input type="text" id="form3Example1cg" name="kullaniciadi" class="form-control form-control-lg 
@@ -171,7 +172,7 @@ if (isset($_POST["Register"])) {
                                         <button type="submit" name="Register" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                                     </div>
 
-                                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="signIn.html" class="fw-bold text-body"><u>Login here</u></a></p>
+                                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{{ route('signIn') }}" class="fw-bold text-body"><u>Login here</u></a></p>
 
                                 </form>
 

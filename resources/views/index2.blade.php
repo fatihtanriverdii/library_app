@@ -48,7 +48,7 @@ session_start();
 
     </section>
 
-    @include('layouts.footer')
+    @include('layouts.footer2')
 
 </body>
 

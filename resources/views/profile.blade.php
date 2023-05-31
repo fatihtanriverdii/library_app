@@ -16,7 +16,7 @@
 
 <body>
 
-    @include('layouts.header')
+    @include('layouts.header2')
 
     <div class="container">
         <div class="row gutters">
@@ -125,7 +125,7 @@
 
     </button>
 
-    @include('layouts.footer')
+    @include('layouts.footer2')
 
 </body>
 

@@ -22,6 +22,7 @@ Route::get('/about', function () {
     return view('layouts.about');
 })->name('about');
 
+
 Route::get('/book', function () {
     return view('kitapornek');
 })->name('book');
@@ -61,3 +62,12 @@ Route::get('/adminSettings', function () {
 Route::get('/adminUsers', function () {
     return view('adminUsers');
 })->name('adminUsers');
+
+Route::post('/register', 'App\Http\Controllers\RegistrationController@register')->name('register');
+
+use App\Http\Controllers\SignInController;
+
+Route::post('/signin', [SignInController::class, 'signIn'])->name('signInC');
+
+
+
