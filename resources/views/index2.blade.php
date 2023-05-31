@@ -12,6 +12,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="{{ asset('css/library.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+    integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 <body>
 
@@ -25,7 +27,7 @@ session_start();
             <div class="searchbox">
                 <input type="text" class="tbox">
                 <a class="buttonsearch" href="">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fas fa-search"></i>
                 </a>
             </div>
 
