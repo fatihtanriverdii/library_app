@@ -70,4 +70,9 @@ use App\Http\Controllers\SignInController;
 Route::post('/signin', [SignInController::class, 'signIn'])->name('signInC');
 
 
+use App\Http\Controllers\BookController;
+
+Route::post('/book-submit', [BookController::class, 'submit'])->name('book.submit');
+
+
 

@@ -223,6 +223,12 @@ button {
     float: right;
 }
 
+#book-summary {
+    width: 100%;
+    height: 200px;
+}
+
+
 .modal {
     display: none;
     position: fixed;

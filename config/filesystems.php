@@ -29,11 +29,13 @@ return [
     */
 
     'disks' => [
-
-        'local' => [
+        // Diğer diskler...
+        
+        'Images' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
-            'throw' => false,
+            'root' => public_path('Images'),
+            'url' => env('APP_URL').'/Images',
+            'visibility' => 'public',
         ],
 
         'public' => [

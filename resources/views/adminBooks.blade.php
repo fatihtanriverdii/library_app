@@ -12,19 +12,19 @@
 
 <body>
 
-<header>
+    <header>
         <a href="#" class="logo">Welcome Fatih</a>
         <nav>
-          <ul>
-            <li><a href="{{ route('admin') }}">Anasayfa</a></li>
-            <li id="books"><a href="{{ route('adminBooks') }}">Kitaplar</a></li>
-            <li><a href="{{ route('adminUsers') }}">Kullanıcılar</a></li>
-            <li><a href="{{ route('adminMessages') }}">Mesajlar</a></li>
-            <li><a href="{{ route('adminSettings') }}">Ayarlar</a></li>
-          </ul>
+            <ul>
+                <li><a href="{{ route('admin') }}">Anasayfa</a></li>
+                <li id="books"><a href="{{ route('adminBooks') }}">Kitaplar</a></li>
+                <li><a href="{{ route('adminUsers') }}">Kullanıcılar</a></li>
+                <li><a href="{{ route('adminMessages') }}">Mesajlar</a></li>
+                <li><a href="{{ route('adminSettings') }}">Ayarlar</a></li>
+            </ul>
         </nav>
         <a href="#" class="logout">Çıkış Yap</a>
-</header>
+    </header>
 
     <section>
 
@@ -42,7 +42,8 @@
             <div id="add-book-modal" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="closeAddBookModal()">&times;</span>
-                    <form id="add-book-form" enctype="multipart/form-data" action="/backend/book_submit.php" method="POST">
+                    <form id="add-book-form" enctype="multipart/form-data" action="{{ route('book.submit') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for="book-title">Kitap İsmi:</label>
                             <input type="text" id="book-title" name="book-title" required>
@@ -56,6 +57,10 @@
                             <input type="number" id="book-pages" name="book-pages" required>
                         </div>
                         <div class="form-group">
+                            <label for="book-summary">Kitap Özeti:</label>
+                            <textarea id="book-summary" name="book-summary" required>{{ old('book-summary') }}</textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="book-stock">Stok Miktarı:</label>
                             <input type="number" id="book-stock" name="book-stock" required>
                         </div>
@@ -65,6 +70,8 @@
                         </div>
                         <input type="submit" value="submit">
                     </form>
+
+
                 </div>
             </div>
 

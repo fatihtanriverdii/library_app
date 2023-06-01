@@ -1,50 +1,44 @@
 <?php
-// Veritabanı bağlantısı için bilgiler
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "library";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Form verilerini al
+    $bookTitle = $_POST['book-title'];
+    $bookGenre = $_POST['book-genre'];
+    $bookPages = $_POST['book-pages'];
+    $bookSummary = $_POST['book-summary'];
+    $bookStock = $_POST['book-stock'];
+    $bookImage = $_FILES['book-image'];
 
-// Veritabanına bağlanma
-$conn = new mysqli($servername, $username, $password, $dbname);
+    // Hedef klasörü belirle
+    $targetDirectory = "Images/"; // Kaydetmek istediğiniz klasör yolunu buraya girin
+    $targetFile = $targetDirectory . basename($bookImage["name"]);
 
-// Bağlantıyı kontrol etme
-if ($conn->connect_error) {
-    die("Veritabanına bağlanılamadı: " . $conn->connect_error);
-}
+    // Fotoğrafı hedef klasöre taşı
+    if (move_uploaded_file($bookImage["tmp_name"], public_path($targetFile))) {
+        // Veritabanı bağlantısı için gerekli bilgileri ayarla
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "library";
 
-// POST verilerini al
-$bookTitle = $_POST['book-title'];
-$bookGenre = $_POST['book-genre'];
-$bookPages = $_POST['book-pages'];
-$bookStock = $_POST['book-stock'];
+        // Veritabanına bağlan
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Veritabanına bağlanırken hata oluştu: " . $conn->connect_error);
+        }
 
-// Fotoğrafı yükleme işlemi
-$targetDir = $_SERVER['DOCUMENT_ROOT'] . "/Images/"; // Yüklenen fotoğrafların kaydedileceği dizin
-$bookImage = $_FILES['book-image']['name'];
-$targetFile = $targetDir . basename($bookImage);
+        // Kitap bilgilerini veritabanına kaydet
+        $sql = "INSERT INTO books (photo_name, photo_path, book_name, book_type, book_page, book_summary, stock) VALUES ('$bookImage[name]', '$targetFile', '$bookTitle', '$bookGenre', $bookPages, '$bookSummary', $bookStock)";
 
-if (move_uploaded_file($_FILES['book-image']['tmp_name'], $targetFile)) {
-    echo "Fotoğraf başarıyla yüklendi.";
-} else {
-    echo "Fotoğraf yüklenirken bir hata oluştu.";
-}
 
-// books_photo tablosuna fotoğrafı kaydet
-$sql = "INSERT INTO books_photo (photo_name, photo_path) VALUES ('$bookTitle', '$targetFile')";
-if ($conn->query($sql) === TRUE) {
-    $photoId = $conn->insert_id; // Son eklenen fotoğrafın ID değeri
+        if ($conn->query($sql) === TRUE) {
+            echo "Kitap başarıyla kaydedildi.";
+        } else {
+            echo "Hata oluştu: " . $conn->error;
+        }
 
-    // books tablosuna kitap bilgilerini kaydet
-    $sql = "INSERT INTO books (book_name, book_type, book_page, stock, photo_id) VALUES ('$bookTitle', '$bookGenre', $bookPages, $bookStock, $photoId)";
-    if ($conn->query($sql) === TRUE) {
-        echo "Kitap veritabanına kaydedildi.";
+        $conn->close();
     } else {
-        echo "Kitap kaydedilirken bir hata oluştu: " . $conn->error;
+        echo "Fotoğraf yüklenirken bir hata oluştu.";
     }
-} else {
-    echo "Kitap fotoğrafı kaydedilirken bir hata oluştu: " . $conn->error;
 }
-
-// Bağlantıyı kapatma
-$conn->close();
+?>
