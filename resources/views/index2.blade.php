@@ -36,15 +36,15 @@ session_start();
             <div class="yazi2"><span>Herkesin Hayatına Dokunan, Mutlaka Okunması Gereken 8 Kitap!</span></div>
 
             <div class="scrollable-wrapper">
-                @foreach ($books as $book)
-                <div class="box">
-                    <a href="{{ route('book') }}">
-                        <img src="{{ asset('Images/' . $book->photo_path) }}">
-                        <span class="yazi3">{{ $book->book_name }}</span>
-                    </a>
+                    @foreach ($books as $book)
+                    <div class="box">
+                        <a href="{{ route('book', ['id' => $book->id]) }}">
+                            <img src="{{ asset('Images/' . $book->photo_path) }}">
+                            <span class="yazi3">{{ $book->book_name }}</span>
+                        </a>
+                    </div>
+                    @endforeach
                 </div>
-                @endforeach
-            </div>
         </div>
 
     </section>

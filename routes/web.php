@@ -20,6 +20,7 @@ Route::get('/', function () {
 use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
+Route::get('/library', [WelcomeController::class, 'index2'])->name('library');
 
 Route::get('/about', function () {
     return view('layouts.about');
@@ -29,10 +30,6 @@ Route::get('/about', function () {
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
-
-Route::get('/library', function () {
-    return view('index2');
-})->name('library');
 
 Route::get('/registration', function () {
     return view('registration');
@@ -75,4 +72,6 @@ Route::post('/book-submit', [BookController::class, 'submit'])->name('book.submi
 
 Route::get('/book/{id}', [BookController::class, 'show'])->name('book');
 
+use App\Http\Controllers\UserController;
 
+Route::post('/user-submit', [UserController::class, 'submit'])->name('user.submit');

@@ -12,4 +12,10 @@ class WelcomeController extends Controller
         $books = DB::table('books')->take(8)->get();
         return view('index', compact('books'));
     }
+
+    public function index2()
+    {
+        $books = DB::table('books')->take(8)->get();
+        return view('index2', compact('books'));
+    }
 }
