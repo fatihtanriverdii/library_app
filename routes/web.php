@@ -18,23 +18,19 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+use App\Http\Controllers\WelcomeController;
+
+Route::get('/', [WelcomeController::class, 'index'])->name('home');
+Route::get('/library', [WelcomeController::class, 'index2'])->name('library');
 
 Route::get('/about', function () {
     return view('layouts.about');
 })->name('about');
 
 
-Route::get('/book', function () {
-    return view('kitapornek');
-})->name('book');
-
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
-
-Route::get('/library', function () {
-    return view('index2');
-})->name('library');
 
 Route::get('/registration', function () {
     return view('registration');
@@ -75,6 +71,8 @@ use App\Http\Controllers\BookController;
 
 Route::post('/book-submit', [BookController::class, 'submit'])->name('book.submit');
 
+Route::get('/book/{id}', [BookController::class, 'show'])->name('book');
+
 
 Route::get('/update', function () {
     return view('update');
@@ -83,3 +81,8 @@ Route::get('/update', function () {
 Route::get('/adminsignin', function () {
     return view('adminsignin');
 })->name('adminsignin');
+
+use App\Http\Controllers\UserController;
+
+Route::post('/user-submit', [UserController::class, 'submit'])->name('user.submit');
+

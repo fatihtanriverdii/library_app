@@ -79,190 +79,53 @@
 
             <div class="tablo">
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Kitap Bilgisi</th>
-                            <th>Barkod</th>
-                            <th>Kitap İsmi</th>
-                            <th>Kitap Türü</th>
-                            <th>Kitap Sayfası</th>
-                            <th>Stok Miktarı</th>
-                            <th>İşlemler</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Kitap Bilgisi 1</td>
-                            <td>123456789</td>
-                            <td>Kitap İsmi 1</td>
-                            <td>Kitap Türü 1</td>
-                            <td>200</td>
-                            <td>10</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kitap Bilgisi 2</td>
-                            <td>987654321</td>
-                            <td>Kitap İsmi 2</td>
-                            <td>Kitap Türü 2</td>
-                            <td>300</td>
-                            <td>5</td>
-                            <td>
-                                <button>Düzenle</button>
-                                <button class="buttonDel">Sil</button>
-                            </td>
-                        </tr>
-                        <!-- buraya daha fazla tablo verisi eklenebilir -->
-                    </tbody>
-                </table>
+                <?php
+
+                use Illuminate\Support\Facades\DB;
+
+                $books = DB::table('books')->get();
+
+                // Tablo başlıkları
+                $table = '<table>
+                <thead>
+                    <tr>
+                        <th>Fotoğraf</th>
+                        <th>Kitap İsmi</th>
+                        <th>Kitap Türü</th>
+                        <th>Kitap Sayfası</th>
+                        <th>Kitap Özeti</th>
+                        <th>Stok</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>';
+
+                // Tablo satırları
+                foreach ($books as $book) {
+                    $photo_name = $book->photo_name;
+                    $photo_path = $book->photo_path;
+                    $book_name = $book->book_name;
+                    $book_type = $book->book_type;
+                    $book_page = $book->book_page;
+                    $book_summary = $book->book_summary;
+                    $stock = $book->stock;
+
+                    $table .= '<tr>
+                    <td><img src="Images/' . $photo_path . '" width="100" height="100"></td>
+                    <td>' . $book_name . '</td>
+                    <td>' . $book_type . '</td>
+                    <td>' . $book_page . '</td>
+                    <td>' . $book_summary . '</td>
+                    <td>' . $stock . '</td>
+                </tr>';
+                }
+
+                // Tablo kapanışı
+                $table .= '</tbody></table>';
+
+                // Oluşturulan tabloyu görüntüle
+                echo $table;
+                ?>
 
             </div>
         </article>

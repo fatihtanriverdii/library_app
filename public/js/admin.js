@@ -85,3 +85,15 @@ addBookForm.addEventListener("submit", function (event) {
     // Form verilerini işleme kodlarını buraya ekleyin
     closeAddBookModal(); // Form gönderildikten sonra pencereyi kapatmak için
 });
+
+
+// admin.js
+
+function openAddUserModal() {
+    document.getElementById("add-user-modal").style.display = "block";
+}
+
+function closeAddUserModal() {
+    document.getElementById("add-user-modal").style.display = "none";
+}
+

@@ -42,4 +42,13 @@ class BookController extends Controller
 
         return "Kitap başarıyla kaydedildi.";
     }
+
+    public function show($id)
+    {
+        // İlgili kitabı veritabanından çekme
+        $book = book::find($id);
+
+        // Kitap verilerini göndererek view'i render etme
+        return view('kitapornek', ['book' => $book]);
+    }
 }

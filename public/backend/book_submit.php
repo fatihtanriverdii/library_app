@@ -10,10 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Hedef klasörü belirle
     $targetDirectory = "Images/"; // Kaydetmek istediğiniz klasör yolunu buraya girin
-    $targetFile = $targetDirectory . basename($bookImage["name"]);
 
-    // Fotoğrafı hedef klasöre taşı
-    if (move_uploaded_file($bookImage["tmp_name"], public_path($targetFile))) {
+    // Dosya adını değiştirmeden hedef klasöre kaydet
+    $targetFile = $targetDirectory . basename($bookImage["name"]);
+    if (move_uploaded_file($bookImage["tmp_name"], $targetFile)) {
         // Veritabanı bağlantısı için gerekli bilgileri ayarla
         $servername = "localhost";
         $username = "root";
@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Kitap bilgilerini veritabanına kaydet
         $sql = "INSERT INTO books (photo_name, photo_path, book_name, book_type, book_page, book_summary, stock) VALUES ('$bookImage[name]', '$targetFile', '$bookTitle', '$bookGenre', $bookPages, '$bookSummary', $bookStock)";
 
-
         if ($conn->query($sql) === TRUE) {
             echo "Kitap başarıyla kaydedildi.";
         } else {
@@ -42,3 +41,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
