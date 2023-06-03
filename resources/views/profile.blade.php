@@ -88,11 +88,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <h6 class="mb-2 text-primary">Change Pasword</h6>
-                                <div class="form-group">
-                                    <label for="ciTy">Pasword</label>
-                                    <input type="name" class="form-control" id="ciTy" placeholder="Enter pasword">
-                                </div>
+                              
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
@@ -101,10 +97,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label for="zIp">New pasword</label>
-                                    <input type="text" class="form-control" id="zIp" placeholder="Enter new pasword">
-                                </div>
+                             
                             </div>
                         </div>
                         <div class="row gutters">
@@ -112,6 +105,7 @@
                                 <div class="text-right">
                                     <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
                                     <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+                                    <button type="button" id="submit" name="submit" class="btn btn-primary"><a href="{{ route('update') }}"><span>Change password</span></a></button>
                                 </div>
                             </div>
                         </div>
