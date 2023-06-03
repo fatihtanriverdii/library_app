@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminsiginContoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,4 +76,10 @@ use App\Http\Controllers\BookController;
 Route::post('/book-submit', [BookController::class, 'submit'])->name('book.submit');
 
 
+Route::get('/update', function () {
+    return view('update');
+})->name('update');
 
+Route::get('/adminsignin', function () {
+    return view('adminsignin');
+})->name('adminsignin');

@@ -26,7 +26,7 @@ if (isset($_POST["giris"])) {
 
 
     if (isset($email) && isset($parola)) {
-        $secim = "SELECT * FROM kullanicilar WHERE email ='$email'";
+        $secim = "SELECT * FROM adminler WHERE email ='$email'";
         $calistir = mysqli_query($baglanti, $secim);
         $kayitsayisi = mysqli_num_rows($calistir);
         if ($kayitsayisi > 0) {
@@ -35,7 +35,7 @@ if (isset($_POST["giris"])) {
             if (password_verify($parola, $haslisifre)) {
                 session_start();
                 $_SESSION["email"] = $ilgilikayit["email"];
-                $_SESSION["kullanici_adi"] = $ilgilikayit["kullanici_adi"];
+                $_SESSION["admin_adi"] = $ilgilikayit["admin_adi"];
                 header("Location:index2.php");
             } else {
                 echo ' <div class="alert alert-danger" role="alert">
@@ -104,10 +104,8 @@ if (isset($_POST["giris"])) {
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remeber Me</label>
                 </div>
                 <button type="submit" name="giris" class="btn btn-primary">Log-In</button>
-                <button type="submit" name="giris" class="btn btn-primary"><a href="{{ route('adminsignin') }}">Log-In for admins</a></button>
             </form>
         </div>
     </div>
