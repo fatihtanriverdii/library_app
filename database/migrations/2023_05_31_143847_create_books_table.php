@@ -10,7 +10,7 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('photo_name', 30);
+            $table->string('photo_name');
             $table->text('photo_path');
             $table->string('book_name', 40);
             $table->string('book_type', 50);

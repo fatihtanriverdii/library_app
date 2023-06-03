@@ -13,5 +13,11 @@ class Book extends Model
     protected $table = 'books';
     protected $primaryKey = 'id';
     // Diğer sütunlar ve ilişkiler
-
+    // Kitap modelinin kolonları
+    protected $fillable = [
+        'kitap_adi',
+        'yazar',
+        'ozet',
+        'photo_path',
+    ];
 }

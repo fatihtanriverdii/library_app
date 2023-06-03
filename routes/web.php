@@ -17,15 +17,14 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+use App\Http\Controllers\WelcomeController;
+
+Route::get('/', [WelcomeController::class, 'index'])->name('home');
 
 Route::get('/about', function () {
     return view('layouts.about');
 })->name('about');
 
-
-Route::get('/book', function () {
-    return view('kitapornek');
-})->name('book');
 
 Route::get('/profile', function () {
     return view('profile');
@@ -74,5 +73,6 @@ use App\Http\Controllers\BookController;
 
 Route::post('/book-submit', [BookController::class, 'submit'])->name('book.submit');
 
+Route::get('/book/{id}', [BookController::class, 'show'])->name('book');
 
 

@@ -3,7 +3,7 @@
 </head>
 
 <footer>
-    <a href="index.html"><img src="Images/footerlogo.png" style="display: block; margin: auto;"></a>
+    <a href="{{ route('home') }}"><img src="Images/footerlogo.png" style="display: block; margin: auto;"></a>
     <div>
         <ul>
             <li><a href="{{ route('home') }}">Home</a> </li>
