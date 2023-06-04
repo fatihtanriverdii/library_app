@@ -107,7 +107,7 @@ if (isset($_POST["giris"])) {
                     <label class="form-check-label" for="exampleCheck1">Remeber Me</label>
                 </div>
                 <button type="submit" name="giris" class="btn btn-primary">Log-In</button>
-                <button type="submit" name="giris" class="btn btn-primary"><a href="{{ route('adminsignin') }}">Log-In for admins</a></button>
+                <a href="{{ route('adminsignin') }}">Log-In for admins</a>
             </form>
         </div>
     </div>

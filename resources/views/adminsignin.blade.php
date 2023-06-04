@@ -5,7 +5,7 @@ $config = config('baglanti');
 $email_err = "";
 $parola_err = "";
 
-if (isset($_POST["giris"])) {
+if (isset($_POST["giris1"])) {
 
     //Email dogrulama
     if (empty($_POST["email"])) {
@@ -74,7 +74,8 @@ if (isset($_POST["giris"])) {
 
     <div class="girisyap">
         <div class="girisform">
-            <form action="{{ route('signInC') }}" method="POST">
+        <form action="{{ route('adminsignIn') }}" method="POST">
+
                 {!! csrf_field() !!}
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -105,7 +106,7 @@ if (isset($_POST["giris"])) {
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 </div>
-                <button type="submit" name="giris" class="btn btn-primary">Log-In</button>
+                <button type="submit" name="giris1" class="btn btn-primary">Log-In</button>
             </form>
         </div>
     </div>
