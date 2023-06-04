@@ -20,27 +20,30 @@
     @include('layouts.header')
 
     <div class="bookBackground">
-        <div class="book"><img src="{{ asset('Images/' . $book->photo_path) }}" width="30%"></div>
+        @if (isset($book))
+            <div class="book"><img src="{{ asset('Images/' . $book->photo_path) }}" width="30%"></div>
 
-        <div class="kitabdugme">
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Kitabin ozetini oku</button>
-            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-                <div class="offcanvas-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body
-                <h5 class=" offcanvas-title" id="offcanvasBottomLabel">
-                    <span class="yazi5">{{ $book->book_name }}:</br></br></span>
-                    <span class="yazi6">{{ $book->book_summary }}</span>
-                    </h5>
-                    <a class="sepet" href=""><i class="fa-solid fa-cart-plus"><span class="yazi5">Sepete eklemek icin tikla</span></i></a>
+                <div class="kitabdugme">
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Kitabin ozetini oku</button>
+                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+                                <span class="yazi5">{{ $book->book_name }}:</br></br></span>
+                                <span class="yazi6">{{ $book->book_summary }}</span>
+                            </h5>
+                            <a class="sepet" href=""><i class="fa-solid fa-cart-plus"><span class="yazi5">Sepete eklemek icin tikla</span></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
+        @else
+            <div class="yazi5" style="color:aliceblue;">{{ $error }}</div>
+        @endif
+    
     @include('layouts.footer')
-
 </body>
 
 </html>

@@ -97,3 +97,44 @@ function closeAddUserModal() {
     document.getElementById("add-user-modal").style.display = "none";
 }
 
+
+
+// Güncelleme için modalı açma
+function openUpdateBookModal(bookId) {
+    const modal = document.getElementById("update-book-modal");
+    const form = document.getElementById("update-book-form");
+  
+    // Kitap bilgilerini almak için AJAX kullanın
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const book = JSON.parse(xhr.responseText);
+  
+        // Kitap bilgilerini form alanlarına aktarın
+        document.getElementById("update-book-id").value = book.id;
+        document.getElementById("update-book-title").value = book.book_name;
+        document.getElementById("update-book-genre").value = book.book_type;
+        document.getElementById("update-book-pages").value = book.book_page;
+        document.getElementById("update-book-summary").value = book.book_summary;
+        document.getElementById("update-book-stock").value = book.stock;
+  
+        // Modalı görüntüleyin
+        modal.style.display = "block";
+      }
+    };
+    xhr.open("GET", "/book/" + bookId, true);
+    xhr.send();
+  }
+  
+  // Güncelleme için modalı kapatma
+  function closeUpdateBookModal() {
+    const modal = document.getElementById("update-book-modal");
+    modal.style.display = "none";
+  }
+  
+  // Kitabı silme
+  function deleteBook(bookName) {
+    // Silme işlemini gerçekleştirmek için gerekli olan kodları burada uygulayabilirsiniz
+    console.log("Kitap silindi: " + bookName);
+  }
+  

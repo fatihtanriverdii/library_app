@@ -16,37 +16,41 @@
 
     <section>
 
-        <section>
-            <article>
-                <span class="yazi1">Find Your Book Of Choice</span>
-                <br /><br /><br />
-                <div class="searchbox">
-                    <input type="text" class="tbox">
-                    <a class="buttonsearch" href="#">
+        <article>
+            <span class="yazi1">Find Your Book Of Choice</span>
+            <br /><br /><br />
+            <div class="searchbox">
+                <form action="{{ route('search') }}" method="GET">
+                    <input type="text" name="query" class="tbox">
+                    <button type="submit" class="buttonsearch">
                         <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+
+
+
+        <div class="container">
+            <div class="yazi2"><span>Herkesin Hayatına Dokunan, Mutlaka Okunması Gereken 8 Kitap!</span></div>
+
+
+            <div class="scrollable-wrapper">
+                @foreach ($books as $book)
+                <div class="box">
+                    <a href="{{ route('book', ['id' => $book->id]) }}">
+                        <img src="{{ asset('Images/' . $book->photo_path) }}">
+                        <span class="yazi3">{{ $book->book_name }}</span>
                     </a>
                 </div>
-            </article>
-
-            <div class="container">
-                <div class="yazi2"><span>Herkesin Hayatına Dokunan, Mutlaka Okunması Gereken 8 Kitap!</span></div>
-
-
-                <div class="scrollable-wrapper">
-                    @foreach ($books as $book)
-                    <div class="box">
-                        <a href="{{ route('book', ['id' => $book->id]) }}">
-                            <img src="{{ asset('Images/' . $book->photo_path) }}">
-                            <span class="yazi3">{{ $book->book_name }}</span>
-                        </a>
-                    </div>
-                    @endforeach
-                </div>
+                @endforeach
             </div>
+        </div>
 
-        </section>
+    </section>
 
-        @include('layouts.footer')
+    @include('layouts.footer')
 
 </body>
 

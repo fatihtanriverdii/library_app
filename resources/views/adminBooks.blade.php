@@ -76,56 +76,74 @@
             </div>
 
 
-
             <div class="tablo">
-
                 <?php
-
-                use Illuminate\Support\Facades\DB;
-
-                $books = DB::table('books')->get();
-
-                // Tablo başlıkları
-                $table = '<table>
-                <thead>
-                    <tr>
-                        <th>Fotoğraf</th>
-                        <th>Kitap İsmi</th>
-                        <th>Kitap Türü</th>
-                        <th>Kitap Sayfası</th>
-                        <th>Kitap Özeti</th>
-                        <th>Stok</th>
-                        <th>İşlemler</th>
-                    </tr>
-                </thead>
-                <tbody>';
-
-                // Tablo satırları
-                foreach ($books as $book) {
-                    $photo_name = $book->photo_name;
-                    $photo_path = $book->photo_path;
-                    $book_name = $book->book_name;
-                    $book_type = $book->book_type;
-                    $book_page = $book->book_page;
-                    $book_summary = $book->book_summary;
-                    $stock = $book->stock;
-
-                    $table .= '<tr>
-                    <td><img src="Images/' . $photo_path . '" width="100" height="100"></td>
-                    <td>' . $book_name . '</td>
-                    <td>' . $book_type . '</td>
-                    <td>' . $book_page . '</td>
-                    <td>' . $book_summary . '</td>
-                    <td>' . $stock . '</td>
-                </tr>';
-                }
-
-                // Tablo kapanışı
-                $table .= '</tbody></table>';
-
-                // Oluşturulan tabloyu görüntüle
-                echo $table;
+                    use Illuminate\Support\Facades\DB;
+                    $books = DB::table('books')->get();
                 ?>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fotoğraf</th>
+                            <th>Kitap İsmi</th>
+                            <th>Kitap Türü</th>
+                            <th>Kitap Sayfası</th>
+                            <th>Kitap Özeti</th>
+                            <th>Stok</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($books as $book) : ?>
+                            <tr>
+                                <td><img src="Images/<?php echo $book->photo_path; ?>" width="100" height="100"></td>
+                                <td><?php echo $book->book_name; ?></td>
+                                <td><?php echo $book->book_type; ?></td>
+                                <td><?php echo $book->book_page; ?></td>
+                                <td><?php echo $book->book_summary; ?></td>
+                                <td><?php echo $book->stock; ?></td>
+                                <td>
+                                <button onclick="openUpdateBookModal('<?php echo $book->id; ?>')">Güncelle</button>
+
+                                    <div id="update-book-modal" class="modal">
+                                        <div class="modal-content">
+                                            <span class="close" onclick="closeUpdateBookModal()">&times;</span>
+                                            <form id="update-book-form" enctype="multipart/form-data" action="{{ route('book.update', $book->id) }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="form-group">
+                                                    <input type="hidden" id="update-book-id" name="book-id">
+                                                    <label for="update-book-title">Kitap İsmi:</label>
+                                                    <input type="text" id="update-book-title" name="book-title" value="{{ $book->book_name }}" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="update-book-genre">Kitap Türü:</label>
+                                                    <input type="text" id="update-book-genre" name="book-genre" value="{{ $book->book_type }}" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="update-book-pages">Kitap Sayfası:</label>
+                                                    <input type="number" id="update-book-pages" name="book-pages" value="{{ $book->book_page }}" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="update-book-summary">Kitap Özeti:</label>
+                                                    <textarea id="update-book-summary" name="book-summary" required>{{ $book->book_summary }}</textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="update-book-stock">Stok Miktarı:</label>
+                                                    <input type="number" id="update-book-stock" name="book-stock" value="{{ $book->stock }}" required>
+                                                </div>
+                                                <input type="submit" value="Güncelle">
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <button onclick="deleteBook('<?php echo $book->book_name; ?>')">Sil</button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+
 
             </div>
         </article>

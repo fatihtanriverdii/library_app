@@ -73,6 +73,8 @@ Route::post('/book-submit', [BookController::class, 'submit'])->name('book.submi
 
 Route::get('/book/{id}', [BookController::class, 'show'])->name('book');
 
+Route::get('/search', [BookController::class, 'search'])->name('search');
+
 
 Route::get('/update', function () {
     return view('update');
@@ -85,4 +87,8 @@ Route::get('/adminsignin', function () {
 use App\Http\Controllers\UserController;
 
 Route::post('/user-submit', [UserController::class, 'submit'])->name('user.submit');
+
+Route::put('/book/update', 'BookController@updateBook')->name('book.update');
+
+
 

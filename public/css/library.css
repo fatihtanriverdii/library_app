@@ -144,23 +144,29 @@ sidenav stilini değiştirin
 .yazi1{
     font: 250% bold tahoma;color: white;
 }
-.searchbox{
-    display: flex;
-    justify-content: center;
-        align-items: center;
-        background-color: #d4cece;
-        width: 70%; height: 15%;
-        border-radius: 40px;
-        padding: 5px;
-        margin:auto;
+.searchbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d4cece;
+  width: 50%;
+  height: 15%;
+  border-radius: 40px;
+  padding: 5px;
+  margin: auto;
 }
+
+.input-container {
+  flex: 1;
+}
+
 .tbox{
     float: left;
     background: none;
     border: none;
     outline: none;
     color: rgb(22, 21, 21);
-    width: 100%;
+    width: 200px;
     font: 16px tahoma;
     padding: 0 7px;
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Book;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
@@ -51,4 +52,45 @@ class BookController extends Controller
         // Kitap verilerini göndererek view'i render etme
         return view('kitapornek', ['book' => $book]);
     }
+
+    public function updateBook(Request $request)
+    {
+        $bookId = $request->input('bookId');
+        $title = $request->input('title');
+        $genre = $request->input('genre');
+        $pages = $request->input('pages');
+        $summary = $request->input('summary');
+        $stock = $request->input('stock');
+
+        // Kitap güncelleme işlemini gerçekleştir (örneğin, veritabanında güncelleme yapılabilir)
+        // Örnek olarak, Eloquent ORM kullanarak kitap modelini güncelleme:
+        $book = Book::find($bookId);
+        $book->title = $title;
+        $book->genre = $genre;
+        $book->pages = $pages;
+        $book->summary = $summary;
+        $book->stock = $stock;
+        $book->save();
+
+        // İşlem başarılıysa başarılı bir yanıt döndür
+        return response()->json(['success' => true, 'message' => 'Kitap güncellendi']);
+    }
+
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+    
+        // Kitabı ara ve sonucu döndür
+        $book = Book::where('book_name', 'LIKE', "%$query%")->first();
+    
+        if ($book) {
+            return view('kitapornek', compact('book'));
+        } else {
+            $book = null;
+            return view('kitapornek')->with('error', 'Aradığınız kitap bulunamadı.');
+        }
+    }
+    
+    
 }
