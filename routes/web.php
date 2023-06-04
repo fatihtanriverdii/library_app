@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminsiginContoller;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,9 @@ use App\Http\Controllers\SignInController;
 
 Route::post('/signin', [SignInController::class, 'signIn'])->name('signInC');
 
+use App\Http\Controllers\AdminsignInController;
+
+Route::post('/adminsignin', [AdminsignInController::class, 'adminsignIn'])->name('adminsignIn');   
 
 use App\Http\Controllers\BookController;
 
